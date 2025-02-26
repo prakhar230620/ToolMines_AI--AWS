@@ -147,8 +147,8 @@ if __name__ == '__main__':
 
     # For development
     if os.environ.get('FLASK_ENV') == 'development':
-        socketio.run(app, debug=True, port=5000)
+        socketio.run(app, debug=True, port=8000)
     # For production with Waitress
     else:
         print("Starting server in production mode...")
-        eventlet.wsgi.server(eventlet.listen(('localhost', 5000)), app)
+        eventlet.wsgi.server(eventlet.listen(('localhost', 8000)), app)
